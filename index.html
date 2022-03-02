@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    .github-corner {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 40px solid transparent;
+      border-left: 40px solid transparent;
+      border-right: 40px solid #606266;
+      border-bottom: 40px solid #606266;
+      z-index: 1;
+      display: none !important;
+    }
+    p>img:not(.emoji){
+      border-radius: 8px;
+      box-shadow: 0 0 8px #999;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+  <script>
+    window.$docsify = {
+      loadSidebar: true,
+      name: '技术文档仓库',
+      repo: 'byoukin/sjzl-wiki',
+      subMaxLevel: 3,
+      search: {
+        paths: 'auto',
+        placeholder: '点此搜索',
+        noData: '找不到相关内容!',
+      },
+      plugins: [
+        EditOnGithubPlugin.create(
+          'https://gitee.com/byoukin/sjzl-wiki/', 
+          'https://gitee.com/byoukin/sjzl-wiki/', 
+          function(file) {
+            if (file.indexOf('en') === -1) {
+              return '<img src="https://github.githubassets.com/images/icons/emoji/memo.png" class="emoji"/>我来编辑此页面'
+            } else {
+              return 'edit on git'
+            }
+          }
+        )
+      ],
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+
+</body>
+</html>
