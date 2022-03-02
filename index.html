@@ -35,7 +35,7 @@
     window.$docsify = {
       loadSidebar: true,
       name: '技术文档仓库',
-      repo: 'byoukin/sjzl-wiki',
+      repo: 'byoukinn/sjzl-wiki',
       subMaxLevel: 3,
       search: {
         paths: 'auto',
@@ -44,8 +44,8 @@
       },
       plugins: [
         EditOnGithubPlugin.create(
-          'https://gitee.com/byoukin/sjzl-wiki/blob/master/', 
-          'https://gitee.com/byoukin/sjzl-wiki/blob/master/', 
+          'https://github.com/byoukinn/sjzl-wiki/blob/master/', 
+          'https://github.com/byoukinn/sjzl-wiki/blob/master/', 
           function(file) {
             if (file.indexOf('en') === -1) {
               return '<img src="https://github.githubassets.com/images/icons/emoji/memo.png" class="emoji"/>我来编辑此页面'
