@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
+    body {
+      background: #fbfbf9;
+    }
     .github-corner {
       position: fixed;
       right: 0;
@@ -25,6 +28,22 @@
       border-radius: 8px;
       box-shadow: 0 0 8px #999;
     }
+    tbody {
+      background: #fff;
+    }
+    thead {
+          background: #556973;
+    color: #fff;
+    }
+    .markdown-section blockquote {
+      background: #e4ede7;
+      padding: 1px 1px;
+
+    }
+    .markdown-secion code {
+          border: 1px solid #d2d2d2;
+
+    }
   </style>
 </head>
 <body>
@@ -35,7 +54,7 @@
     window.$docsify = {
       loadSidebar: true,
       name: '技术文档仓库',
-      repo: 'byoukinn/sjzl-wiki',
+      repo: 'byoukin/sjzl-wiki',
       subMaxLevel: 3,
       search: {
         paths: 'auto',
