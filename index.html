@@ -8,8 +8,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
+    @keyframes shake {
+      0%, 100% {
+          -webkit-transform: translateX(0);
+      }
+      10%,30%,50%,70%,90% {
+          -webkit-transform: translateX(-5px);
+      }
+      20%,40%,60%,80% {
+          -webkit-transform: translateX(5px);
+      }
+   }
     body {
       background: #fbfbf9;
+    }
+    input[type=search] {
+      transition: 0.3s all;
+      border-radius: 4px;
+      background: #eee;
+      margin: 4px;
+      animation: shake 1s;
+      -o-animation: shake 1s;
+      -webkit-animation: shake 1s;
+      -moz-animation: shake 1s;
+    }
+    input[type=search]:hover {
+      box-shadow: 0 0 5px var(--theme-color, #42b983);
+    }
+    .to-edit {
+      position: absolute;
+      right: 16px;
     }
     .github-corner {
       position: fixed;
@@ -26,23 +54,73 @@
     }
     p>img:not(.emoji){
       border-radius: 8px;
-      box-shadow: 0 0 8px #999;
+      box-shadow: 0 6px 16px -3px #999;
     }
     tbody {
       background: #fff;
     }
     thead {
-          background: #556973;
-    color: #fff;
+      background: #556973;
+      color: #fff;
     }
     .markdown-section blockquote {
       background: #e4ede7;
-      padding: 1px 1px;
+      padding: 1px 16px;
 
     }
-    .markdown-secion code {
-          border: 1px solid #d2d2d2;
-
+    .markdown-section code {
+      border: 1px solid #d2d2d2;
+    }
+    .markdown-section details {
+        transition: 0.3s transform;
+        box-shadow: 0px 9px 14px -7px #5d7459;
+        background: #eee;
+        margin: 16px 0px;
+        padding: 0 20px;
+        border: 1px solid #d2d2d2;
+        border-bottom: 4px solid #d2d2d2;
+        border-radius: 8px;
+        /*padding-bottom: 0;*/
+    }
+    .markdown-section details:hover {
+      transform: translateY(-4px);
+    }
+    .markdown-section details:active {
+      transform: translateY(-4px) scale(1.1);
+    }
+    .markdown-section details summary {
+      display: list-item;
+      counter-increment: list-item 0;
+      list-style: inside disclosure-closed;
+      background: #eee;
+      /*padding-top: 4px;*/
+      margin: 0 -20px;
+      cursor: pointer;
+      color: #0d461e;
+      padding: 16px 20px;
+      /*padding-bottom: 16px;*/
+    }
+    .markdown-section details[open] summary {
+      list-style-type: disclosure-open;
+      /*padding-bottom: 8px;*/
+    }
+    .markdown-section details summary b {
+      color: var(--theme-color,#42b983);
+    }
+    .markdown-section details[open]>summary::after,.markdown-section details>summary::after {
+      /* position: absolute; */
+      display: block;
+      margin-bottom: -8px;
+      text-align: right;
+      color: #3476d2;
+      font-size: 0.7rem;
+      padding: 8px 8px;
+    }
+    .markdown-section details[open]>summary::after {
+      content: '点击收起 <';
+    }
+    .markdown-section details>summary::after  {
+      content: '点击展开 >';
     }
   </style>
 </head>
@@ -67,7 +145,7 @@
           'https://github.com/byoukinn/sjzl-wiki/blob/master/', 
           function(file) {
             if (file.indexOf('en') === -1) {
-              return '<img src="https://github.githubassets.com/images/icons/emoji/memo.png" class="emoji"/>我来编辑此页面'
+              return '<div class="to-edit"><img src="https://github.githubassets.com/images/icons/emoji/memo.png" class="emoji"/>我来编辑此页面</div>'
             } else {
               return 'edit on git'
             }
@@ -78,8 +156,15 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('EditOnGithubPlugin.onClick', function() {
+      // 确认功能
+      var edit = document.querySelector('.to-edit')
+      console.log(edit)
 
+    })
+  </script>
 </body>
 </html>

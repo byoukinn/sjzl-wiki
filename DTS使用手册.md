@@ -51,10 +51,77 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 ![创建文件夹入口](DTS使用手册.assets/image-20220218172502633.png)
 
 从系统右上角处可以找到建立文件夹（菜单项）入口，**其他项**可以参考以下：
+<details>
+<summary><b>系统设置：</b>配置DTS的清日志时间、邮件订阅信息配置、集群配置、底部栏等</summary>
 
-1. 该菜单可以配置DTS的清日志时间、邮件事件配置、集群配置、底部栏等信息
-2. 该菜单可以新增用户、修改用户密码、编辑用户权限、停用锁定用户等
-3. 该菜单可以编辑系统左边菜单栏的内容，调整位置、新增子文件夹等
+#### 界面说明
+
+![系统配置界面](DTS使用手册.assets/image-20220309180923617.png)
+
+#### 配置DTS清除日志调度   
+
+![设定定时历史删除日志调度](DTS使用手册.assets/image-20220309182203342.png)
+
+
+- 邮件订阅信息配置    
+
+- 集群功能配置   
+
+#### 系统信息配置  
+
+| 配置项 | 配置名称 | 备注 |
+| ------ | -------- | -------- |
+|restcloud.masterserver.fixed|指定主服务器|该项确定集群服务器主节点|
+|system.config.hidden|隐藏系统设置||
+|api.debug|把所有API设置为调试状态||
+|allowmixed.requestbody|API为键值对参数时是否允许使用RequestBody提交||
+|ConnUtil.listDocsByPage.postgresql|PostgreSQL分页语句| |
+|DatabaseProductName|自定义数据库类型产品名||
+|ConnUtil.listDocsByPage.hive|Hive数据库的分页SQL||
+|repository.html.dir|HTML视图模板代码存放路径||
+|repository.type|代码仓库类型(git或者svn)||
+|repository.sql.dir|SQL代码仓库存储的路径|                          |
+|git.projectdir|GIT仓库本地项目硬盘路径||
+|git.password|GIT用户的密码||
+|git.username|GIT的用户名||
+|git.url|GIT远程仓库URL|                          |
+|repository.java.dir|仓库中Java源文件存储目录||
+|svn.projectdir|svn项目本地硬盘路径|                          |
+|svn.password|svn的密码|                          |
+|svn.username|svn的用户名||
+|svn.url|SVN远程项目URL|                          |
+|AdminIndexUrl|系统登录成功后的首页URL||
+|weixin.CorpID|企业微信的企业ID||
+|StartClassMonitor|Java源文件扫描监控|                          |
+|UrlParameterExtension|服务URI允许的后缀名|                          |
+|ConnUtil.listDocsByPage.mysql|MySql的分页SQL语句|                          |
+|ConnUtil.listDocsByPage.sqlserver|MSSql分页SQL语句|                          |
+|ConnUtil.listDocsByPage.oracle|Oracle分页的SQL语句|                          |
+|token.expires.time|Token的有效期小时|                          |
+|workflow.engine.host|工作流引擎host地址||
+|discovery.server.expirytime|服务实例失效的时间设置||
+|token.password|用户加密token的密钥||
+
+
+
+
+</details>
+
+<details>
+<summary><b>用户管理：</b>新增用户、修改用户密码、编辑用户权限、停用锁定用户等</summary>
+
+![修改和新增用户](DTS使用手册.assets/image-20220309105825555.png)
+
+</details>
+
+<details>
+   <summary><b>菜单管理：</b>编辑系统左边菜单栏的内容，调整位置、新增子文件夹等</summary>
+
+	![菜单管理](DTS使用手册.assets/image-20220309110622700.png)
+
+   </details>
+
+
 
 ### 5.1 创建流程
 
@@ -187,7 +254,7 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 
 ### 8.2 如何优化DTS、DTS跑得慢、DTS好卡
 
-↑参考[《七、DTS优化之路》](#七dts优化之路dts好卡解决方案跑得慢解决方案)章节
+↑参考[《七、DTS优化之路》](#七、dts优化之路、dts好卡解决方案、跑得慢解决方案)章节
 
 ### 8.3 交换过去的数据会出现重复数据
 
@@ -213,7 +280,7 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 
 ### 8.8 怎么添加新用户，如何增加用户，想给老师加账号，新建账号，修改密码
 
-↑参考[《5.0 创建文件夹、配置底部栏系统信息、新增修改用户、权限管理》](创建文件夹配置底部栏系统信息新增修改用户权限管理)章节
+↑参考[《5.0 创建文件夹、配置底部栏系统信息、新增修改用户、权限管理》](#_50-创建文件夹、配置底部栏系统信息、新增修改用户、权限管理)章节
 
 ### 8.9 我的SQL能在编辑器执行，但是DTS无法分析字段/执行/预览，错误：无效字符
 
@@ -244,7 +311,7 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 
 情况一般分为两种：
 
-如果是`sql不正确`，请去数据库手动执行该SQL。如果手动执行能成功的情况，参考篇章：[8.9 我的SQL能在编辑器执行，但是DTS无法分析字段/执行/预览，错误：无效字符](#我的sql能在编辑器执行但是dts无法分析字段执行预览错误无效字符)
+如果是`sql不正确`，请去数据库手动执行该SQL。如果手动执行能成功的情况，参考篇章：[8.9 我的SQL能在编辑器执行，但是DTS无法分析字段/执行/预览，错误：无效字符](#_89-我的SQL能在编辑器执行，但是DTS无法分析字段执行预览，错误：无效字符)
 
 如果是`数据表为空`，请通过的从表中读入，如果非要通过SQL读入，可以手动插入一条数据到数据表，就能通过SQL读入了。
 
