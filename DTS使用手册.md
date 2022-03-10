@@ -16,6 +16,8 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 
 请参考该文章下的`《创建数据源》、《创建数据交换流程》、《创建时间调度》、《运行情况监控》`。
 
+[测试](./test.drawio ':include :type=code')
+
 ## 四、创建数据源
 
 | 数据源文件类型 | 数据源种类示例            | 支持程度         |
@@ -117,9 +119,9 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 <details>
    <summary><b>菜单管理：</b>编辑系统左边菜单栏的内容，调整位置、新增子文件夹等</summary>
 
-	![菜单管理](DTS使用手册.assets/image-20220309110622700.png)
+![菜单管理](DTS使用手册.assets/image-20220309110622700.png)
 
-   </details>
+</details>
 
 
 
