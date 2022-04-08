@@ -121,10 +121,87 @@
     .markdown-section details>summary::after  {
       content: '点击展开...';
     }
+    .edit-mask {
+      position: fixed;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .edit-mask.active {
+      display: flex;
+    }
+    .edit-mask-bg {
+      background: rgba(0,0,0,0.15);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .edit-mask-inner {
+      background: #f2f2f2;
+      padding: 32px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px #bdbdbd;
+    }
+    .edit-mask-inner-close {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      color: #999;
+    }
+    .edit-mask-inner button {
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-top: 8px;
+      border: 0;
+      transition: 0.3s;
+      background: #fff;
+      box-shadow: 0 5px 12px #ccc;
+      cursor: pointer;
+    }
+    .edit-mask-inner p {
+        text-align: left;
+        color: #999;
+        font-size: 0.85rem;
+    }
+    .edit-mask-inner button#readed {
+          margin-top: 48px;
+        color: #fff;
+        background: rgb(9 150 86);
+    }
+    .edit-mask-inner button:hover {
+      filter:brightness(1.1);
+    }
+
   </style>
 </head>
 <body>
   <div id="app"></div>
+  <div class="edit-mask">
+    <div class="edit-mask-bg"></div>
+    <div class="edit-mask-inner"> 
+      <c class="edit-mask-inner-close">✖</c>
+      <h3>开始编辑前请先阅读编辑方法</h3>
+      <p>如果还没学习过如何操作</p>
+      <p>请通过查阅文档《贡献文章》</p>
+      <p>或者点击我还没看过以跳转至教程。</p>
+            <button id='readed'>直接开始</button>
+      <button id='notRead'>我还没看过，现在学习</button>
+    </div>
+  </div>
+
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
   <script>
@@ -165,9 +242,31 @@
               return 'edit on git'
             }
           }
-        )
+        ),
       ],
     }
+    // 强行干涉动作    
+    let originalEditDoc = window.EditOnGithubPlugin.editDoc 
+    window.EditOnGithubPlugin.editDoc = (event, vm) => {
+      document.querySelector('.edit-mask').classList.add('active')
+      document.querySelector('.edit-mask-inner button#readed').onclick = e => {
+        originalEditDoc(event, vm)
+      }
+      document.querySelector('.edit-mask-inner button#notRead').onclick = e => {
+        window.location.href='/#/为此文档做出贡献'
+        document.querySelector('.edit-mask').classList.remove('active')
+      }
+      let removePopover = e => {
+        document.querySelector('.edit-mask').classList.remove('active')
+        e.preventDefault()
+        e.stopPropagation()
+        return false
+      }
+      document.querySelector('.edit-mask-bg').onclick = removePopover
+      document.querySelector('.edit-mask-inner-close').onclick = removePopover
+
+    }
+
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
@@ -175,13 +274,5 @@
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-drawio/viewer.min.js"></script>
   <script src='//cdn.jsdelivr.net/npm/docsify-drawio/drawio.js'></script>
-  <script type="text/javascript">
-    window.addEventListener('EditOnGithubPlugin.onClick', function() {
-      // 确认功能
-      var edit = document.querySelector('.to-edit')
-      console.log(edit)
-
-    })
-  </script>
 </body>
 </html>
