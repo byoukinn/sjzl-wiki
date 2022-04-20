@@ -348,6 +348,84 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 
 如果出现以上情况大概率是增量节点出了问题，可以检查增量节点配置是否正确，如是否增量运算字段设置已从前继节点载入，是否正确配置主键
 
+### 8.17 DTS按照升级文档更新后能到登录界面但是输入账号密码后却有报错，请在mongoDB数据库下，新建查询执行以下四段SQL
+
+第一段：
+```
+db.P_OrgPersons.update({}, {$set: {logged:""}})
+```
+第二段：
+```
+db.getCollection("P_AppMenuItemConfig").insert( {  
+    _id: ObjectId("60a777308a92831d9820dcf9"),  
+    categoryId: "daas.monitor",  
+    parentNodeId: "home",  
+    nodeId: "FailureStop",  
+    menuName: "异常流程",  
+    sortNum: "1001",  
+    openType: "1",  
+    leafFlag: false,  
+    count: NumberInt("0"),  
+    id: "60a777308a92831d9820dcf8",  
+    appId: "daas",  
+    createTime: "2021-05-21 17:02:40",  
+    creator: "dts_admin",  
+    creatorName: "管理员",  
+    editTime: "2021-05-21 17:03:08",  
+    editor: "dts_admin",  
+    editorName: "管理员"  
+} );
+```
+第三段：
+```
+db.getCollection("P_SchedulerTaskConfig").insert( {  
+    _id: ObjectId("6013c3cabe53fb77c58eca02"),  
+    configName: "定时清空Tomcat的logs",  
+    expression: "0 15 23 * * ?",  
+    beanId: "AbnormalChangeOver",  
+    methodName: "deleteTomcatLogs",  
+    state: "1",  
+    executeServer: "AllServer",  
+    maxRunNum: NumberInt("1"),  
+    runNum: NumberInt("0"),  
+    runingFlag: false,  
+    id: "6013c3cabe53fb77c58eca01",  
+    appId: "base",  
+    createTime: "2021-01-29 16:14:02",  
+    creator: "dts_admin",  
+    creatorName: "管理员",  
+    editTime: "2021-02-02 14:27:45",  
+    editor: "dts_admin",  
+    editorName: "管理员",  
+    methodParams: "",  
+    remark: ""  
+} ); 
+```
+第四段：
+```
+db.getCollection("P_SchedulerTaskConfig").insert( {  
+    _id: ObjectId("6018b617be53fb472086478d"),  
+    configName: "定时删除流程日志",  
+    expression: "0 15 23 * * ?",  
+    beanId: "SchedulerJvmMonitor",  
+    methodName: "deleteProcessLog",  
+    state: "1",  
+    executeServer: "AllServer",  
+    methodParams: "-1",  
+    maxRunNum: NumberInt("1"),  
+    runNum: NumberInt("0"),  
+    runingFlag: false,  
+    id: "6018b617be53fb472086478c",  
+    appId: "base",  
+    createTime: "2021-02-02 10:16:55",  
+    creator: "dts_admin",  
+    creatorName: "管理员",  
+    editTime: "2021-02-02 10:16:55",  
+    editor: "dts_admin",  
+    editorName: "管理员"  
+} ); 
+```
+
 ###  8.99 Service run exception, please contact the administrator to get the detailed log
 
 只要报错都会出现这段英文，代表某处地方出问题了，看`系统监控->控制台日志`找报错原因，然后找百度，如果百度不出来找我。
