@@ -426,10 +426,6 @@ db.getCollection("P_SchedulerTaskConfig").insert( {
 } ); 
 ```
 
-###  8.18 DTS的license授权申请
-
-DTS的license授权申请，请邮件发送给研究院黄璐，抄送研究院刘小华，实施所在部门的大区总经理，实施总监。
-
 ###  8.99 Service run exception, please contact the administrator to get the detailed log
 
 只要报错都会出现这段英文，代表某处地方出问题了，看`系统监控->控制台日志`找报错原因，然后找百度，如果百度不出来找我。

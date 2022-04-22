@@ -20,7 +20,7 @@
 ## 脚本内容
 ```js
 /*
-	script：DTS查询错误含失败传输次数的流程
+	script：询DTS每次运行记录超过XX分钟的流程
 	author: 张家宝
 	created: 2022年4月1日13:33:47
 	uses:  查询DTS每次运行记录超过15分钟的（可调整timeoutMins），丢到DTS数据库全选执行即可。
