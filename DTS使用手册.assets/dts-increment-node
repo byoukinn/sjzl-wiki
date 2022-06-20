@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2022-06-20T06:16:03.042Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="-woN6SNuPGlnJfO1-3fw" version="19.0.1" type="github">
+  <diagram id="bOoe2NxmkvF0bRaBIGEX" name="Page-1">
+    <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zyml7NIZk6SGXTnszbco-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-25" target="zyml7NIZk6SGXTnszbco-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="100" as="sourcePoint" />
+            <mxPoint x="250" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-2" target="zyml7NIZk6SGXTnszbco-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-2" value="读取数据" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="230" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-4" target="zyml7NIZk6SGXTnszbco-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-4" value="检查字段是否&quot;对比字段&quot;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="310" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-13" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-11" target="zyml7NIZk6SGXTnszbco-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-15" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-11" target="zyml7NIZk6SGXTnszbco-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-11" value="是否有主键" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="130" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-12" value="流程失败" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="125" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-16" target="zyml7NIZk6SGXTnszbco-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-16" value="对比差异（仅勾选对比字段）" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="390" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zyml7NIZk6SGXTnszbco-18" target="zyml7NIZk6SGXTnszbco-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-18" value="根据差异结果生成DML语句" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="470" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-23" value="输出流" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="212.5" y="550" width="75" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="zyml7NIZk6SGXTnszbco-25" value="增量开始" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
