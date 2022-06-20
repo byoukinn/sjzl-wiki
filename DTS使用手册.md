@@ -167,7 +167,6 @@ DTS指`数据交换服务（Data transfer service）`，是我司与Restcloud公
 !> 此节点新旧版有明显区别，可以下拉框选择源字段的则为新版！
 
 <details><summary>**旧版**的同学请看这里</summary>
-</details>
 
 ![旧版的界面](DTS使用手册.assets/image-20220620140045136.png)
 
