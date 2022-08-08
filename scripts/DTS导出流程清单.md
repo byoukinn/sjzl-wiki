@@ -1,27 +1,18 @@
 ## 脚本介绍
 
-该脚本适用于DTS的溯源。
+该脚本适用于DTS导出流程清单
 
 ##  使用方法
 
 1. 试用Navicat打开DTS的mongodb数据库（目前仅测试navicat成功）
-2. 
+2. 切换用户（数据库）到Restcloud_DTS
+3. 将以下脚本，粘贴到新建的SQL窗口，并且执行
+4. 如需改名，则将最后一行替换成补充脚本2
+5. 然后将结果导出成json格式，如下图
+6. 
 
-## 更新历史
+![导出目标json方式](DTS导出流程清单.assets/image-20220726141137126.png)
 
-版本从最新到最旧
-
-| 版本号 | 更新内容                                                     |
-| ------ | ------------------------------------------------------------ |
-| v9     | DTS更新组件，改名，修复bug，增加auto()时的提示               |
-| v8     | sql分离器的解析力增加，解决结果表的最后一行无法显示的问题，结果表的精准度增加 |
-| v7     | 修复展开和折叠不一定成功的bug，无论如何都将结果打印          |
-| v6     | 增加了时长可控制，按alt+p调出控制框，按alt+q切换血缘关系折叠状态，判断字段是否正确的方式改成为由字段页面取文字来对比，增加case when的解析力，兼容性更强 |
-| v5     | 增加alt+x快捷键启动脚本                                      |
-| v4     | 增加便于识别                                                 |
-| v3     | 让全自动展开后，自动关闭，并且再次展开错误会变蓝色           |
-| v2     | 增加系统判定错误与成功的颜色的功能                           |
-| v1     | 全自动展开，让系统自动判断                                   |
 
 ## 脚本内容 
 
@@ -360,15 +351,19 @@ var processLists = db.P_DaaSProcessModelConfig.aggregate([
 	}
 }])
 
+
+
 // 如需推荐改名，则替换本行
 processLists // 需替换行
 ```
 
+
+## 脚本内容二（改名补充，需替换上面最后一行） 
 ```js
 // 如需推荐改名，则将本行替换上脚本最后一行
 var config = {
-	connectorToken: '->',
-	divideToken: ' @ ',
+	connectorToken: '>',
+	divideToken: '：',
 }
 processLists.map(e => {
 	var fromDataSourceInfos = e['源头数据源名称'] || ''
@@ -402,5 +397,13 @@ processLists.map(e => {
 	//	printjson(e)
 	return e
 })
+```
+
+## EXECL 公式
+
+```excel
+# 使用该公式插入到最后一列，并且由excel自动补齐，获得更新语句
+
+="db.getCollection(""P_DaaSProcessModelConfig"").updateOne({id: '"&A7&"'},{configName: '"&V7&"'}, { upsert: false });"
 ```
 

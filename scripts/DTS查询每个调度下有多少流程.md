@@ -28,9 +28,14 @@ db.P_DaaSProcessModelConfig.aggregate([
     {
         $group: {
             _id: '$expressions.ruleName',
-            count:{$sum:1}
+            count: { $sum: 1 }
         }
-     }
+     },
+    {
+        $sort : {
+            count: -1
+        }
+    }
 ]);
 ```
 
@@ -70,6 +75,11 @@ db.P_DaaSProcessModelConfig.aggregate([
             ruleName: 1,
             expression: 1
         }
-	}
+	},
+    {
+        $sort : {
+            ruleName: 1
+        }
+    }
 ]);
 ```

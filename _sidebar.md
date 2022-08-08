@@ -7,6 +7,7 @@
   * [DTS查询每个调度下有多少流程](scripts/DTS查询每个调度下有多少流程)
   * [将日期调度批量插入DTS平台](scripts/将日期调度批量插入DTS平台)
   * [DTS溯源脚本](scripts/DTS溯源脚本)
+  * [DTS导出流程清单](scripts/DTS导出流程清单)
   * [DTS的license授权申请](scripts/DTS的license授权申请)
 
 * [信息标准平台](信息标准平台使用手册)
