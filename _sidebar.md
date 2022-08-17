@@ -2,6 +2,7 @@
 
 * [DTS平台使用手册](DTS使用手册)
 
+  * [Linux操作DTS和MongoDB服务](scripts/Linux操作DTS与MongoDB服务)
   * [查询流程运行超过15分钟脚本](scripts/DTS查询流程运行超过15分钟)
   * [DTS查询含失败的流程脚本](scripts/DTS查询含失败的流程)
   * [DTS查询每个调度下有多少流程](scripts/DTS查询每个调度下有多少流程)
