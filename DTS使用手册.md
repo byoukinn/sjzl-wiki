@@ -58,8 +58,11 @@ DTS指`数据交换服务（Data transfer service）`，是内存计算型数据
 从系统右上角处可以找到建立文件夹（菜单项）入口，**其他项**可以参考以下：
 <details>
 <summary><b>系统设置：</b>配置DTS的清日志时间、邮件订阅信息配置、集群配置、底部栏等</summary>
+### 查看mongodb数据库连接信息
 
-#### 界面说明
+![数据库连接信息](DTS使用手册.assets/image-20220906170828402.png)
+
+#### 参数配置入口
 
 ![系统配置界面](DTS使用手册.assets/image-20220309180923617.png)
 
@@ -537,6 +540,36 @@ Exception: PKIX path building failed: sun.security.provider.certpath.SunCertPath
 
 1. 数据能插入，道标确实是该数据库更新了驱动，此时通过更换驱动包解决
 2. 数据不能插入，看报错，曾有项目地因为该数据库所在服务器磁盘已满而无法插入数据
+
+### 8.20 写入节点找不到表
+
+<details>
+    <summary>问题：目标读取节点可以取到数据，但是目标表在写入的时候提示表或视图不存在</summary>
+
+
+
+![image-20220906165016008](DTS使用手册.assets/image-20220906165016008.png)
+
+解决办法
+
+数据源、写入节点强制Schema用户id，让DTS能读取到目标用户的目标表。
+
+![image-20220906165054567](DTS使用手册.assets/image-20220906165054567.png)
+
+![image-20220906165149831](DTS使用手册.assets/image-20220906165149831.png)
+
+</details>
+
+### 8.21 意外宕机，导致DTS无法正常启动
+
+按照顺序：数据库、DTS重启服务器即可，如果还是无法正常启动，请在本机查看网页是否可通并检查防火墙的配置。
+
+window server：
+
+	- Mongo: 打开任务管理器，结束mongo进程，mongo服务会自动重启mongo进程，如果没有，则寻找mongo服务自行重启
+	- DTS: 一般要求系统部署人员在桌面留下启动DTS的批处理文件，如果没有，则寻找tomcat目录自行startup.sh启动
+
+linux server：[点此查看linux操作说明](scripts/Linux操作DTS与MongoDB服务)
 
 ###  8.99 Service run exception, please contact the administrator to get the detailed log
 
