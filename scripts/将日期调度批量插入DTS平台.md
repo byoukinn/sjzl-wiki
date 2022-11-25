@@ -5,14 +5,14 @@
 ##  使用方法
 
 通过Robot或者Navicat连接到DTS的数据库（Mongodb）。
-注：必须在RestCloud_DTS的数据库下面执行脚本，需要按步骤一步步执行，执行错误就需要自行删除相关数据重头执行。
+注：必须在RestCloud_DTS的数据库下面执行脚本，执行错误就需要自行删除相关数据重头执行。
 
-## 执行步骤
+## 执行代码
 
-### step1. 生成当前日期 
 
 ```js
 /*
+	### step1. 生成当前日期 
 	script：将日期调度批量插入DTS平台v3
 	author: 张家宝
 	created: 2022年4月1日13:33:47
@@ -42,12 +42,9 @@ Date.prototype.format = function (fmt) {
 };
 var createdCurTime = new Date();
 createdCurTime = createdCurTime.format('yyyy-MM-dd hh:mm:ss');
-```
 
-### step2. 将调度的下级菜单插入到Mongodb数据库
-
-```js
 /*
+	### step2. 将调度的下级菜单插入到Mongodb数据库
 	script：将日期调度批量插入DTS平台v3
 	author: 张家宝
 	created: 2022年4月1日13:33:47
@@ -219,12 +216,9 @@ db.P_AppMenuItemConfig.insertMany([
   },
 
 ]);
-```
 
-### step3. 将时间调度插入到Mongodb数据库
-
-```js
-/*
+/* 
+	step3. 将时间调度插入到Mongodb数据库
 	script：将日期调度批量插入DTS平台v3
 	author: 张家宝
 	created: 2022年4月1日13:33:47
