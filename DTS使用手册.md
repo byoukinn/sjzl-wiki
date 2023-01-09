@@ -566,7 +566,11 @@ Exception: PKIX path building failed: sun.security.provider.certpath.SunCertPath
 
 ### 8.21 意外宕机，导致DTS无法正常启动
 
-按照顺序：数据库、DTS重启服务器即可，如果还是无法正常启动，请在本机查看网页是否可通并检查防火墙的配置。
+登录dts报错：`{state:false,msg:"The system has not been initialized yet. API is not allowed to be invoked"}`
+
+查看tomcat日志发现在提示 mongo database open。这个时候MONGO服务器很可能是连不上去了，检查是否需要重启
+
+如需重启，按照顺序：数据库、DTS重启服务器即可，如果还是无法正常启动，请在本机查看网页是否可通并检查防火墙的配置。
 
 window server：
 
@@ -574,6 +578,7 @@ window server：
 	- DTS: 一般要求系统部署人员在桌面留下启动DTS的批处理文件，如果没有，则寻找tomcat目录自行startup.sh启动
 
 linux server：[点此查看linux操作说明](scripts/Linux操作DTS与MongoDB服务)
+
 
 ###  8.99 Service run exception, please contact the administrator to get the detailed log
 
