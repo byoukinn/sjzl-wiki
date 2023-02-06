@@ -75,7 +75,7 @@
       padding: 1px 16px;
 
     }
-    .markdown-section code:not([class*=lang-]) {
+    .markdown-section code:not([class*=lang]) {
       border: 1px solid #d2d2d2;
       background: #efefef;
       color: #f08d49 !important;
@@ -195,6 +195,9 @@
       filter:brightness(1.1);
     }
     /*代码高亮*/
+.markdown-section code[class*=language-],.markdown-section pre[class*=language-]{color:#ccc;background:0 0;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5rem;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}.markdown-section pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}.markdown-section :not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}.markdown-section :not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.markdown-section .token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.markdown-section .token.punctuation{color:#ccc}.markdown-section .token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.markdown-section .token.function-name{color:#6196cc}.markdown-section .token.boolean,.token.function,.token.number{color:#f08d49}.markdown-section .token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.markdown-section .token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.markdown-section .token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.markdown-section .token.entity,.token.operator,.token.url{color:#67cdcc}.markdown-section .token.bold,.token.important{font-weight:700}.markdown-section .token.italic{font-style:italic}.markdown-section .token.entity{cursor:help}.markdown-section .token.inserted{color:green}.markdown-section 
+.markdown-section pre[data-line]{position:relative;padding:1em 0 1em 3em}.markdown-section .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}.markdown-section @media print{.line-highlight{-webkit-print-color-adjust:exact;color-adjust:exact}.markdown-section }.markdown-section .line-highlight:before,.line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}.markdown-section .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}.markdown-section .line-numbers .line-highlight:after,.line-numbers .line-highlight:before{content:none}.markdown-section pre[id].linkable-line-numbers span.line-numbers-rows{pointer-events:all}.markdown-section pre[id].linkable-line-numbers span.line-numbers-rows>span:before{cursor:pointer}.markdown-section pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(128,128,128,.2)}.markdown-section 
+.markdown-section pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-section pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.markdown-section .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-section .line-numbers-rows>span{display:block;counter-increment:linenumber}.markdown-section .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-section 
 
     .markdown-section code[class*=lang-]{;background-color:#282828;border-radius:2px;color:#ccc !important;font-family:Roboto Mono,Monaco,courier,monospace;margin:0 2px;padding:3px 5px;white-space:pre-wrap}
     .markdown-section>:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) code[class*=lang-]{font-size:.8rem}
@@ -204,11 +207,14 @@
      .token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}
 
 
-.markdown-section code[class*=language-],.markdown-section pre[class*=language-]{color:#ccc;background:0 0;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}
+/*.markdown-section code[class*=language-],.markdown-section pre[class*=language-]{color:#ccc;background:0 0;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}
 .markdown-section pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}
 .markdown-section :not(pre)>code[class*=language-],.markdown-section pre[class*=language-]{background:#2d2d2d}.markdown-section :not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}
 .markdown-section pre[data-line]{position:relative;padding:1em 0 1em 3em}.line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}@media print{.line-highlight{-webkit-print-color-adjust:exact;color-adjust:exact}}.line-highlight:before,.line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}.line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}.line-numbers .line-highlight:after,.line-numbers .line-highlight:before{content:none}pre[id].linkable-line-numbers span.line-numbers-rows{pointer-events:all}pre[id].linkable-line-numbers span.line-numbers-rows>span:before{cursor:pointer}pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(128,128,128,.2)}
-.markdown-section pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}
+.markdown-section pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}*/
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+batch+docker+java+javadoclike+json+mongodb+nginx+plsql+regex+sql+yaml&plugins=line-highlight+line-numbers */
+
 
 
   </style>
@@ -302,17 +308,28 @@
   <!-- Docsify v4 -->
   <script src="js/docsify4.js"></script>
     <!-- 代码高亮 -->
-  <script type="text/javascript" src="js/prism.js"></script>
   <script src="js/zoom-image.min.js"></script>
   <script src="js/search.min.js"></script>
   <script src="js/viewer.min.js"></script>
   <script src='js/drawio.js'></script>
   <script src="js/docsify-copy-code.min.js"></script>
+  <script type="text/javascript" src="js/prism.js"></script>
   <script type="text/javascript">
     // 原本的docsify再加载图片前就已经触发滚动，导致通过url进入的内容不是现在显示的内容，观感体验不好，延时1.5秒后重新定位页面
     setTimeout(function() {
-          window.scrollTo(0, document.body.querySelector('[data-id='+decodeURI(location.href.match(/\??id=([A-Za-z0-9%_-]*)&?/)[1])+']').getBoundingClientRect().top + window.pageYOffset - 30)
+        
+    	matched = location.href.match(/\??id=([A-Za-z0-9%_-]*)&?/)
+		if (matched == null) return
+        window.scrollTo(0, document.body.querySelector('[data-id='+decodeURI(matched[1])+']').getBoundingClientRect().top + window.pageYOffset - 30)
         }, 1500);
+    // 原本的高亮不会随着url更新变化而变化，这里强制让他发生变化
+    let urlHash = null
+    setInterval(() => {
+    	if (urlHash != window.location.hash) {
+    		urlHash = window.location.hash
+    		Prism.highlightAll()
+    	}
+    }, 1000)
   </script>
 </body>
 </html>
