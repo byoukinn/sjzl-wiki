@@ -353,12 +353,12 @@ var processLists = db.P_DaaSProcessModelConfig.aggregate([
 
 
 
-// 如需推荐改名，则替换本行
-processLists // 需替换行
+
+processLists // 如需推荐名称列，则替换本行为【脚本内容二（改名补充）】
 ```
 
 
-## 脚本内容二（改名补充，需替换上面最后一行） 
+## 脚本内容二（改名补充，需替换上面脚本的最后一行：processLists ） 
 ```js
 // 如需推荐改名，则将本行替换上脚本最后一行
 var config = {
